@@ -15,7 +15,9 @@ function App() {
     if(counter === 20){
       setStr("You reach max value");
     }else{
-      setCounter(counter+1);
+      setCounter(prevCounter => prevCounter + 1);
+      setCounter(prevCounter => prevCounter + 1);
+      setCounter(prevCounter => prevCounter + 1);
       setStr('');
     }
   }
