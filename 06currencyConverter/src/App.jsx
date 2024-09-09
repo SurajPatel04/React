@@ -23,7 +23,7 @@ function App() {
     if (CurrencyInfo[to] && amount != null) {
       setConvertedAmount(amount * CurrencyInfo[to]);
     }
-  }, [from, to  , CurrencyInfo]);
+  }, [from, to, CurrencyInfo]);
 
   const convert = () => {
     if (CurrencyInfo[to]) {
@@ -32,30 +32,28 @@ function App() {
   };
 
   return (
-    <div className="w-1/2 h-screen mx-auto flex justify-center items-center">
-      <div className="glossy-background w-full h-auto rounded-lg bg-gradient-to-r from-white/20 via-white/30 to-white/20 shadow-inner flex items-center justify-center p-4 flex-col">
-        <h1 className='text-center text-black bg-green-300 w-full p-3 rounded-xl'>Currency Converter</h1>
+    <div className="w-full p-4 h-screen mx-auto flex justify-center items-center">
+      <div className="glossy-background w-full max-w-md h-auto rounded-lg bg-gradient-to-r from-white/20 via-white/30 to-white/20 shadow-inner flex items-center justify-center p-4 flex-col">
+        <h1 className='text-center text-black bg-green-300 w-full p-3 rounded-xl text-lg md:text-2xl'>Currency Converter</h1>
         <Input
           from="From"
-          label="From"
+          type="Currency Type"
           currencyOption={options}
           amount={amount}
           onAmountChange={setAmount}
           onCurrencyChange={setFrom}
           selectCurrency={from}
-          type="Currency Type"
         />
-        <button className='bg-blue-700 text-white border-white-300 px-5 py-2 rounded-3xl border' onClick={swap}>Swap</button>
+        <button className='bg-blue-700 text-white border-white-300 px-5 py-2 rounded-3xl border mt-4' onClick={swap}>Swap</button>
         <Input
           from="To"
-          label="To"
+          type="Currency Type"
           currencyOption={options}
           amount={convertedAmount}
-          onCurrencyChange={(currency)=>setTo(currency)}
+          onCurrencyChange={setTo}
           selectCurrency={to}
-          type="Currency Type"
         />
-        <button className='bg-blue-700 text-white p-2 rounded-3xl w-full h-12' onClick={convert}>
+        <button className='bg-blue-700 text-white p-2 rounded-3xl w-full h-12 mt-4' onClick={convert}>
           Convert {from.toUpperCase()} to {to.toUpperCase()}
         </button>
       </div>
