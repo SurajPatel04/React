@@ -34,7 +34,7 @@ function App() {
   return (
     <div className="w-full p-4 h-screen mx-auto flex justify-center items-center">
       <div className="glossy-background w-full max-w-md h-auto rounded-lg bg-gradient-to-r from-white/20 via-white/30 to-white/20 shadow-inner flex items-center justify-center p-4 flex-col">
-        <h1 className='text-center text-black bg-green-300 w-full p-3 rounded-xl text-lg md:text-2xl'>Currency Converter</h1>
+        <h1 className='text-center text-black  w-full p-3 rounded-xl text-lg md:text-2xl'>Currency Converter</h1>
         <Input
           from="From"
           type="Currency Type"
@@ -44,7 +44,9 @@ function App() {
           onCurrencyChange={setFrom}
           selectCurrency={from}
         />
-        <button className='bg-blue-700 text-white border-white-300 px-5 py-2 rounded-3xl border mt-4' onClick={swap}>Swap</button>
+        <button className='bg-blue-700 text-white border-white-300 px-5 
+        transition-transform transform active:scale-95 
+        py-2 rounded-3xl border mt-4' onClick={swap}>Swap</button>
         <Input
           from="To"
           type="Currency Type"
@@ -53,7 +55,12 @@ function App() {
           onCurrencyChange={setTo}
           selectCurrency={to}
         />
-        <button className='bg-blue-700 text-white p-2 rounded-3xl w-full h-12 mt-4' onClick={convert}>
+        <button 
+          className='bg-blue-700 text-white p-2 rounded-3xl w-full h-12 mt-4 
+                    transition-transform transform active:scale-95 
+                    hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300' 
+          onClick={convert}
+        >
           Convert {from.toUpperCase()} to {to.toUpperCase()}
         </button>
       </div>
