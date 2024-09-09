@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import useCurrencyInfo from './hooks/useCurrencyInfo';
 import Input from "./components/Inputbox";
+import currImg from './assets/curr.png'
 
 function App() {
   const [amount, setAmount] = useState(0);
@@ -34,7 +35,15 @@ function App() {
   return (
     <div className="w-full p-4 h-screen mx-auto flex justify-center items-center">
       <div className="glossy-background w-full max-w-md h-auto rounded-lg bg-gradient-to-r from-white/20 via-white/30 to-white/20 shadow-inner flex items-center justify-center p-4 flex-col">
-        <h1 className='text-center text-black  w-full p-3 rounded-xl text-lg md:text-2xl'>Currency Converter</h1>
+        <h1 className='text-center text-white  w-full p-3 rounded-xl text-lg md:text-2xl shadow-2xl'
+          style={{ 
+            backgroundImage: `url(${currImg})`,
+            backgroundSize: 'cover', 
+            backgroundPosition: 'center', 
+            // color: 'transparent', 
+            fontSize: '2rem'
+          }}
+        >Currency Converter</h1>
         <Input
           from="From"
           type="Currency Type"
