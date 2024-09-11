@@ -7,7 +7,7 @@ function Input({
   onAmountChange,
   onCurrencyChange,
   currencyOption = [],
-  selectCurrency = "use",
+  selectCurrency = "usd",
 }) {
   const amountInputId = useId();
 
